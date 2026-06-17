@@ -1,0 +1,152 @@
+---
+title: "Análise da Lei de Zipf com Noções de Divergência"
+subtitle: "Aplicado a dados do FAERS 2025 (_FDA Adverse Event Reporting System_)"
+author: "José Vítor Barreto Porfírio 261102700"
+date: "18 june 2026"
+date-format: "DD MMMM YYYY" 
+lang: pt
+execute:
+  echo: false
+format: 
+  revealjs:
+    theme: dark
+    footer: '[GitHub](https://github.com/Voz-bonita/FAERS-Power-Law.git)'
+    self-contained: true
+logo: images/UnB_Logo.png
+css: styles.css
+bibliography: references.bib
+nocite: |
+  @MATSUSHITA_GOF, @jitter2017
+---
+
+## Agenda
+
+- Recomendação de Leitura
+- Ideias principais de _Power Laws_
+- Teste de Hipóteses
+- _Jittering_
+- FAERS
+
+# A inspiração
+
+## {transition="fade"}
+
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\braket}[2]{\langle#1|#2\rangle}
+
+<center>
+<h3>Revisão e Extensão</h3>
+<h4>@Clauset_2009</h4>
+<h4>_Power-law distributions in empirical data_</h4>
+</center>
+
+$$\\[5pt]$$
+ 
+
+::: {.fragment .fade-in-then-out}
+
+- Boas práticas
+- Exemplos sintéticos
+- 24 Exemplos em conjuntos de dados reais
+
+:::
+
+# _Power Law_ ou _Zipf-Mandelbrot Law_
+
+## {transition="fade"}
+
+<center>
+<h3>_Power Law_ ou _Zipf's Law_</h3>
+</center>
+
+::: {.fragment .fade-in}
+
+$$y \propto \frac{1}{x},~ x \in \{1,2,3,...\}$$
+
+:::
+
+::: {.fragment .fade-in}
+
+$$\text{frequência}_{k} \propto \frac{1}{k}$$
+$$\text{frequência}_{1} = C\frac{1}{1}$$
+
+:::
+
+::: {.fragment .fade-in}
+
+$$\text{frequência}_{n} = \frac{C}{n} = \frac{\text{frequência}_{1}}{n}$$
+
+:::
+
+## {transition="fade"}
+
+<center>
+<h3>_Power Law_ ou _Zipf-Mandelbrot Law_</h3>
+</center>
+
+$$y \propto \frac{1}{(x + x_\min)^{\alpha}}$$
+
+## {transition="fade"}
+
+<center>
+![](../assets/synthetic_cdf.png)
+</center>
+
+## {transition="fade"}
+
+<center>
+![](../assets/synthetic_p_value.png)
+</center>
+
+## {transition="fade"}
+
+<center>
+![](../assets/synthetic_p_value_ks_renyi.png)
+</center>
+
+# Erro discreto e Contínuo
+
+## {transition="fade"}
+
+<center>
+![](../assets/no_jitter_mse.png)
+</center>
+
+## {transition="fade"}
+
+<center>
+![](../assets/jitter_mse.png)
+</center>
+
+# Aplicação FAERS
+
+## {transition="fade"}
+
+<center>
+![](../assets/faers/faers_raw_counts.png)
+</center>
+
+## {transition="fade"}
+
+<center>
+![](../assets/faers/faers_truncated_counts.png)
+</center>
+
+## {transition="fade"}
+
+<center>
+![](../assets/faers/faers_counts_estimated.png)
+</center>
+
+$$\hat{\alpha} \approx 1.92 \qquad \text{p-valor}(n = 1000) = 0.04$$
+
+##
+
+### Principais Referências
+
+::: {#refs}
+
+:::
+
+# Obrigado pela atenção
