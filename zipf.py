@@ -165,7 +165,7 @@ def fit_zipf_cdf(counts, cdf):
     )
 
 
-def fit_powerlaw_mle(data, xmin=None):
+def fit_powerlaw_mle(data, xmin=None, sup="continuous"):
     """
     Fit a continuous power-law distribution using MLE.
 
@@ -203,8 +203,12 @@ def fit_powerlaw_mle(data, xmin=None):
     if n == 0:
         raise ValueError("No observations satisfy x >= xmin.")
 
-    denominator = np.sum(np.log(tail / xmin))
-    # denominator = np.sum(np.log(tail / (xmin - 1 / 2)))
+    if sup == "continuous":
+        denominator = np.sum(np.log(tail / xmin))
+    elif sup == "discrete":
+        denominator = np.sum(np.log(tail / (xmin - 1 / 2)))
+    else:
+        raise ValueError("sup must be either 'discrete' or 'continuous'")
 
     if denominator <= 0:
         raise ValueError("MLE is undefined for these data.")
