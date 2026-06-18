@@ -6,7 +6,7 @@ from tqdm import tqdm
 from multiprocessing import Pool
 
 
-def jitter(smp, xmin):
+def jitter(smp, xmin, eps=3e-1):
     eps = 3e-1
     n = len(smp)
     noise = np.random.uniform(-eps, eps, size=n)
