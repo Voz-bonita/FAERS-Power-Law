@@ -1,1 +1,5 @@
 presentation/presentation.html linguist-generated=true
+presentation/images/* linguist-vendored=true
+presentation/presentation.qmd* linguist-vendored=true
+presentation/references.bib* linguist-vendored=true
+presentation/styles.css* linguist-vendored=true
