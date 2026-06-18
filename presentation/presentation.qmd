@@ -85,7 +85,7 @@ $$\text{frequência}_{n} = \frac{C}{n} = \frac{\text{frequência}_{1}}{n}$$
 <h3>_Power Law_ ou _Zipf-Mandelbrot Law_</h3>
 </center>
 
-$$y \propto \frac{1}{(x + x_\min)^{\alpha}}$$
+$$y \propto \frac{1}{(x + x_{\min})^\alpha}$$
 
 ## {transition="fade"}
 
