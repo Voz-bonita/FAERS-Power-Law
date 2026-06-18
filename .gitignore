@@ -1,6 +1,7 @@
 __pycache__
 .venv
-faers*
+faers/2025*
+faers_ascii*
 data
 refs
 
